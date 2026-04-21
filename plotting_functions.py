@@ -33,7 +33,7 @@ def plot_grid(data, idx = None, n = 4):
                     z = data[:, idx].flatten()
                     axes[i, j].scatter(x, y, c=z, cmap='viridis')
                 else: 
-                    axes[i, j].scatter(x, y)
+                    axes[i, j].scatter(x, y, s=5)
                 axes[i, j].set_title(f"{points[i]} vs {points[j]}")
 
     plt.tight_layout()
