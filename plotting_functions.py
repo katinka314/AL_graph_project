@@ -8,9 +8,9 @@ def load_data(datapath):
     data = df.to_numpy()[:,1:]
     return data
 
-def condition(data, node_idx, lower_bound = None, upper_bound = None):
+def condition(data, node_idx, lower_bound = -1000, upper_bound = 1000):
     Node_data = data[:,node_idx].flatten()
-    cond_idx = (-1 < Node_data) & (Node_data < 0)
+    cond_idx = (lower_bound < Node_data) & (Node_data < upper_bound)
     cond = np.where(cond_idx)[0]
     cond_data = data[cond,:]
     return cond_data
