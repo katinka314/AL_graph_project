@@ -80,11 +80,11 @@ def plot_pairwise_hist(data, intv_data, n = 6):
     for i in range(n):
         x = data[:,i].flatten()
         x_inv = intv_data[:,i].flatten()
-        axes[1, i].hist(x, bins =10)
-        axes[1, i].set_title(f"baseline")
+        axes[0, i].hist(x, bins =10)
+        axes[0, i].set_title(f"baseline")
 
-        axes[2, i].hist(x_inv, bins =10)
-        axes[2, i].set_title(f"Intervention")
+        axes[1, i].hist(x_inv, bins =10)
+        axes[1, i].set_title(f"Intervention")
     
 
     plt.tight_layout()
