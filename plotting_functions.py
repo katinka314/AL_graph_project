@@ -77,16 +77,6 @@ def plot_pairwise_hist(data, intv_data, n=6):
     fig, axes = plt.subplots(2, n, figsize=(18, 6))
 
     for i in range(n):
-<<<<<<< HEAD
-        x = data[:,i].flatten()
-        x_inv = intv_data[:,i].flatten()
-        axes[0, i].hist(x, bins =10)
-        axes[0, i].set_title(f"baseline")
-
-        axes[1, i].hist(x_inv, bins =10)
-        axes[1, i].set_title(f"Intervention")
-    
-=======
         x = data[:, i].flatten()
         
         # repeat intervention data to match baseline size
@@ -96,9 +86,8 @@ def plot_pairwise_hist(data, intv_data, n=6):
         axes[0, i].hist(x, bins=10)
         axes[0, i].set_title("baseline")
 
-        axes[1, i].hist(x_inv, bins=10)
+        axes[1, i].hist(x_inv, bins=10, range=(min(x), max(x)))
         axes[1, i].set_title("intervention")
->>>>>>> 3881869 (Made som extra plots)
 
     plt.tight_layout()
     plt.show()
